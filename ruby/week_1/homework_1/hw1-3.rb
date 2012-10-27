@@ -10,7 +10,7 @@ get '/hw1/:number' do
   collection = db['funnynumbers']
 
   begin
-    iter = collection.find({}, limit: 1, skip: number, sort: ['value', Mongo::DESCENDING])
+    iter = collection.find({}, limit: 1, skip: number, sort: ['value', Mongo::ASCENDING])
     iter.each{|item| return item['value'].to_i.to_s }
   rescue
     puts "Error trying to read collection: %s" % $!

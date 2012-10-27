@@ -9,14 +9,14 @@ j = {first_name: "Andrew", last_name: "Erlichson"}
 
 begin
   users.insert(j)
-rescue Exception => e
-  puts "insert failed: %s" % e.message
+rescue
+  puts "insert failed: %s" % $!
 end
 
 puts j
 
 begin
   users.insert(j)
-rescue Exception => e
-  puts "insert failed: %s" % e.message
+rescue
+  puts "insert failed: %s" % $!
 end
